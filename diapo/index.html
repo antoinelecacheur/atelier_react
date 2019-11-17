@@ -44,6 +44,12 @@
 				<section>
 					<section>
 						<h3>Structure d'un projet React</h3>
+						<ul>
+							<li><b>node_modules</b> contient toutes les dépendances du projet. ~ maven repository propre à chaque application React.</li>
+							<li><b>package.json</b> déclare toutes les dépendances présentes dans l'application.</li>
+							<li><b>public</b> contient le seul fichier html de l'appli.</li>
+							<li><b>src</b> qui contiendra tous nos composants.</li>
+						</ul>
 
 					</section>
 					<section data-markdown>
@@ -62,9 +68,100 @@
 								npm test
 						
 					</section>
+					<section data-markdown>
+						<textarea data-template>
+							### Single Page Application
+```javascript
+// On importe les librairies et composants nécessaires
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+
+/* On injecte le composant App dans la balise <div id="root"/>
+définie dans le fichier index.html */
+
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							- Un Composant peut être une classe ou une fonction qui renvoie du [JSX](https://reactjs.org/docs/introducing-jsx.html) une syntaxe à mi-chemin entre html et javascript.
+
+							```javascript
+							const maVariableJavascript = "Mon premier essai en react"
+
+							return (
+								<h1>
+									Du JSX ? {maVariableJavascript}!
+								</h1>
+								);
+							
+							```
+							- Le JSX doit être encadré de parenthèses () s'il s'étend sur plusieurs lignes, on y introduit du code javascript entre accolades {}.
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+								- Une classe qui hérite de React.Component :
+
+								```javascript
+								// Nécessaire pour accéder à Component, mais aussi pour écrire du JSX
+								import React from 'react' 
+
+								export default class MonComposant extends React.Component {
+									render() {
+										return(
+											<h1>
+												Mon premier Composant React !
+											</h1>
+										)
+									}
+								}
+								```
+						</textarea>
+					</section>
+					<section data-markdown>
+							<textarea data-template>
+									- Une fonction :
+```javascript
+import React from 'react'
+function MonComposant() {
+    return (
+        <h1>
+            Mon premier Composant React !
+        </h1>
+    )
+}
+// Équivalent à l'écriture en fonction fléchée :
+const MonComposant = () => {
+    return (
+        <h1>
+            Mon premier Composant React !
+        </h1>
+    )
+}
+// Ne pas oublier l'export !
+export default MonComposant
+```
+							</textarea>
+						</section>
+				</section>
+				<section>
+					<section>
+						<h2>Passer de l'information entre composants : props</h2>
+							<ul>
+								<li>React prévoit donc un moyen de communiquer : Composant Parent -> Composant Enfant par l'intermédiaire des <b>props</b>.</li>
+								<li>Les props sont des propriétés qu'un composant parent va passer à un composant enfant.</li>
+								<li>Il est impossible de modifier une props directement dans le composant enfant qui la reçoit.c.</li>
+								<li>Le rôle des props est d'imposer un comportement spécifique au composant en question.</li>
+							</ul>
+					</section>
 				</section>
 			</div>
-		</div>²
+		</div>
 
 		<script src="js/reveal.js"></script>
 
