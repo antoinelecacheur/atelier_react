@@ -1,0 +1,14 @@
+pages:
+  stage: deploy
+  tags:
+  - shell
+  script:
+  - echo " => copie dans public pour publication sur pages"
+  - mkdir .public
+  - cp -r  * .public/
+  - mv .public public
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
