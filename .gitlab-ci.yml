@@ -3,7 +3,10 @@ pages:
   tags:
   - shell
   script:
-  - echo "Deploy to gitlab pages"
+  - echo " => copie dans diapo pour publication sur pages"
+  - mkdir .diapo
+  - cp -r  * .diapo/
+  - mv .diapo diapo
   artifacts:
     paths:
     - diapo
