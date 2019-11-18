@@ -5,7 +5,7 @@ pages:
   script:
   - echo " => copie dans public pour publication sur pages"
   - mkdir .public
-  - cp -r  /diapo .public/
+  - cp -r diapo .public/
   - mv .public public
   artifacts:
     paths:
