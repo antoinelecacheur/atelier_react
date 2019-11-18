@@ -3,12 +3,9 @@ pages:
   tags:
   - shell
   script:
-  - echo " => copie dans public pour publication sur pages"
-  - mkdir .public
-  - cp -r diapo .public/
-  - mv .public public
+  - echo "Deploy to gitlab pages"
   artifacts:
     paths:
-    - public
+    - diapo
   only:
   - master
